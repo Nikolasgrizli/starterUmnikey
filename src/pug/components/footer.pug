@@ -1,0 +1,82 @@
+mixin footer(data)
+	- data = data || {}
+	-
+		var copyText = '© 2023 Immigration2Australia: Australian Immigration Guide'
+		var links = [
+			[
+				{
+					title: 'Title 1',
+					child: ['Subtitle 1']
+				},
+				{
+					title: 'Title 2',
+					child: [
+						'Subtitle 2',
+						'Subtitle 3',
+						'Subtitle 4',
+					]
+				},
+				{
+					title: 'Title 3',
+					child: [
+						'Subtitle 5',
+						'Subtitle 6',
+						'Subtitle 7',
+					]
+				},
+			],
+			[
+				{
+					title: 'Title 1',
+					child: ['Subtitle 1']
+				},
+				{
+					title: 'Title 2',
+					child: [
+						'Subtitle 2',
+						'Subtitle 3',
+						'Subtitle 4',
+					]
+				},
+			],
+			[
+				{
+					title: 'Title 1',
+					child: ['Subtitle 1']
+				},
+				{
+					title: 'Title 2',
+					child: [
+						'Subtitle 2',
+						'Subtitle 3',
+						'Subtitle 4',
+					]
+				},
+			]
+		]
+
+
+	.footer
+		.container
+			.footer__logo
+				a.logo-site(href="/")
+					//- .logo-inner
+					img(src=`${pathPrefix}img/logos/logo.svg`, alt="", width="140" height="48")
+						//- | MNY
+			.footer__top
+				each item in links
+					.footer__col
+						each subItem, i in item
+							if(i>0)
+								strong.footer__title(style='--mt:15;')!=subItem.title
+							else
+								strong.footer__title!=subItem.title
+							if(subItem.child)
+								ul
+									each child in subItem.child
+										li
+											a(href='#')!=child
+
+		.footer__bottom
+			.container
+				.footer__copy!=copyText

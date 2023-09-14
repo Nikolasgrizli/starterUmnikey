@@ -1,0 +1,54 @@
+extends ./layout/main.pug
+
+block content
+	main.main
+		section
+			h1 Title
+			//- img(src="assets/img/demo1.jpg", alt="")
+			//- +icon('arrow')
+
+			-
+				var cs = {
+					searchable: false,
+					defaultSelected: false,
+					placeholder: false,
+					titled: false,
+					multiple: false,
+					arr: [
+						{
+							value: 25,
+							text: '18-24',
+						},
+						{
+							value: 30,
+							text: '25-32',
+						},
+						{
+							value: 25,
+							text: '33-39',
+						},
+						{
+							value: 15,
+							text: '40-44',
+						},
+						{
+							value: 0,
+							text: '45 or older',
+						},
+					],
+				}
+			.form__line
+				label.form__label(for='age') Age:
+				+customSelect(cs).js-custom-select.wide(id='age')
+
+
+			-
+				let figureImg1= {
+					name:   "demo1",
+					ext:    'jpg',
+					w:      1380,
+					h:      1182,
+					cls: 'w-100'
+				}
+			.img-shadow
+				+figureImg(figureImg1,true)
