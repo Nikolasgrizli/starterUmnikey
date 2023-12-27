@@ -7,19 +7,34 @@ pug,
 svgSprite,
 imagemin(webp,avif)
 
-helpers:
+## helpers:
 gsap
 nice-select2
 
+## dep. helpers:
+yarn
+[Volta](https://volta.sh/)
 
-npm > 9.6.3
-node > 19.9.0
+### volta setting:
+"volta": {
+    "node": "19.9.0",
+    "npm": "9.6.3",
+    "yarn": "1.22.19"
+}
 
-```yarn
-
+## project start
+1. Install project:
+```
+yarn
+```
+2. Start local work:
+```
 yarn run start
-
-yarn run build```
+```
+3. Build project:
+```
+yarn run build
+```
 
 
 Warn:
